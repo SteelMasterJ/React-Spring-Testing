@@ -16,6 +16,19 @@ export default function component1() {
                         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
                         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
+                        <Spring
+                            from={{ number: 0}}
+                            to={{ number: 10 }}
+                            config={{ duration: 10000}}
+                        >
+                            {props => (
+                                <div style={props}>
+                                    <h1 style={counter}>
+                                        {props.number.toFixed()}
+                                    </h1>
+                                </div>
+                            )}
+                        </Spring>
                     </div>
                 </div>
             )}
@@ -27,4 +40,10 @@ const c1Style = {
     background: 'steelblue',
     color: 'white',
     padding: '1.5rem'
+}
+
+const counter = {
+    textAlign: 'center',
+    margin: '1rem auto',
+    width: '100px'
 }
